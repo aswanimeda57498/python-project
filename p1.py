@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 player1 = input("enter player1 choice:").lower()
 player2 = input("enter payer2 choice:").lower()
 
@@ -14,3 +15,18 @@ print(result)
              
             
 
+=======
+def greet():
+    print("welcome")
+greet()
+    
+def greeting(message):
+    print(message)    
+greeting("welcome")
+    
+def calc(a,b):
+    return a+b, a*b
+total,product = calc(10,20)
+print(total)
+print(product)
+>>>>>>> 49945fa (induxing)
