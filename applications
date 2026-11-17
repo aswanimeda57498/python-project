@@ -1,0 +1,40 @@
+class Food:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    def show(self):
+        print(f"{self.name} - Rs.{self.price}")
+# Function to show menu
+def show_menu(menu):
+    print("===== COLLEGE CANTEEN =====")
+    for i in range(len(menu)):
+        print(f"{i+1}. ", end="")
+        menu[i].show()
+    print("0. Bill & Exit")
+# Function to print bill
+def print_bill(cart, total):
+    print("\n===== YOUR BILL =====")
+    for item in cart:
+        print(item.name, "-", item.price)
+    print("Total:", total)
+    print("Thank You!")
+# Main Code
+menu = [Food("Pizza", 199),
+        Food("Burger", 99),
+        Food("Biryani", 249),
+        Food("Fries", 79)]
+cart = []
+total = 0
+show_menu(menu)
+while True:
+    choice = input("\nEnter number: ")
+    if choice == "0":
+        break
+    elif choice == "1" or choice == "2" or choice == "3" or choice == "4":
+        item = menu[int(choice) - 1]
+        cart.append(item)
+        total = total + item.price
+        print(f"Added {item.name}")
+    else:
+        print("Wrong number, try again")
+print_bill(cart, total)
